@@ -20,7 +20,6 @@ main() {
 
     printf("\n"); /* Acrescenta uma linha em branco */
     /* Escreve o resultado */
-    printf("A soma dos valores é %hu e a média é %hu\n",
-    total, media);
+    printf("A soma dos valores é %hu e a média é %hu\n", total, media);
 }
 

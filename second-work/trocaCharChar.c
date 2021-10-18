@@ -5,6 +5,7 @@ int main() { /* Início da função principal */
     char caracter1, caracter2, caracter3;
 
     printf("Introduza três caracteres: ");
+
     /*
     Lê caracteres
     scanf(" %c ", &caracter1);
@@ -12,13 +13,10 @@ int main() { /* Início da função principal */
     scanf(" %c", &caracter3);
     */
 
+
     caracter1 = getchar();
     caracter2 = getchar();
     caracter3 = getchar();
-
-    putchar(caracter1);
-    putchar(caracter2);
-    putchar(caracter2);
 
     /* Escreve caracteres pela ordem inversa */
     printf("\nInvertendo a ordem dos caracteres obtemos: ");
@@ -26,9 +24,3 @@ int main() { /* Início da função principal */
 }
 
 /*links that will help me
-
-
-
-
-*/
-
