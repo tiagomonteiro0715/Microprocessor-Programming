@@ -6,7 +6,7 @@
 #include <stdlib.h> /* define exit() para sair do programa */
 /*como fazer com apenas UM switch*/
 int main () {
-      int Input, sucesso=0;
+      int Input, sucesso=0, varTemp;
       int hundred, dozens, unit;
       int dozensNum;
 
@@ -15,9 +15,9 @@ int main () {
       scanf("%d", &Input);
       if ( Input<100 || Input>=999){
           printf("Please choose and input between 100 and 999\n");
+          scanf("%d", &Input);
         } else {
-          printf("\nInput number: %d", Input);
-          sucesso=1;
+          printf("\nInput number: %d \n", Input);
         }
 
       hundred = (int) Input / 100;
@@ -25,77 +25,54 @@ int main () {
       dozensNum = dozens / 10;
       unit = Input - ((hundred*100) + (dozensNum*10));
 
-      //unit = Input -(hundred + dozens)
-      printf("number: %d, hundred: %d, dozensNum: %d, unit: %d", Input, hundred, dozensNum, unit);
-//if k = 1, hundred variable.
-        switch (hundred) {
+
+    for (int i = 1; i <= 3; i += 1){
+      if (i == 1){
+        varTemp = hundred;
+          printf("O algarismo das centenas e o ");
+      }
+
+      if (i == 2){
+        varTemp = dozensNum;
+          printf("O algarismo das dezenas e o ");
+      }
+
+      if (i == 3){
+        varTemp = unit;
+          printf("O algarismo das unidades e o ");
+      }
+
+        switch (varTemp) {
           case 1:
-           printf("O algarismo das centenas é o um");
+           printf("um \n");
            break;
           case 2:
-            printf("O algarismo das centenas é o dois");
+            printf("dois \n");
             break;
           case 3:
-            printf("O algarismo das centenas é o tres");
+            printf("tres\n");
            break;
           case 4:
-           printf("O algarismo das centenas é o quatro");
+           printf("quatro\n");
            break;
           case 5:
-            printf("O algarismo das centenas é o cinco");
+            printf("cinco\n");
             break;
           case 6:
-            printf("O algarismo das centenas é o seis");
+            printf("seis\n");
             break;
           case 7:
-            printf("O algarismo das centenas é o sets");
+            printf("sets\n");
             break;
           case 8:
-            printf("O algarismo das centenas é o oito");
+            printf("oito\n");
             break;
           case 9:
-            printf("O algarismo das centenas é o nove");
+            printf("nove\n");
             break;
-
-            switch (hundred) {
-              case 1:
-               printf("O algarismo das centenas é o um");
-               break;
-              case 2:
-                printf("O algarismo das centenas é o dois");
-                break;
-              case 3:
-                printf("O algarismo das centenas é o tres");
-               break;
-              case 4:
-               printf("O algarismo das centenas é o quatro");
-               break;
-              case 5:
-                printf("O algarismo das centenas é o cinco");
-                break;
-              case 6:
-                printf("O algarismo das centenas é o seis");
-                break;
-              case 7:
-                printf("O algarismo das centenas é o sets");
-                break;
-              case 8:
-                printf("O algarismo das centenas é o oito");
-                break;
-              case 9:
-                printf("O algarismo das centenas é o nove");
-                break;
-
-
-
-
-
-
-
-
 
         }
 
-
+}
     }
 }

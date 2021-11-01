@@ -7,7 +7,7 @@
 
 int main () {
     int i, n=0, firstTerm=0, secondTerm=1, Term;
-
+	int today;
     printf ("Introduza o limite de elementos pretendido: ");
     if (scanf (" %d", &n) != 1) {     /* Se não leu um elemento */
         printf ("Leitura do limite inválida\n");
@@ -25,5 +25,6 @@ int main () {
         firstTerm = secondTerm;
         secondTerm = Term;
         Term = firstTerm + secondTerm;
+		
     }
 }

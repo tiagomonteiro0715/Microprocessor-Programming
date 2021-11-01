@@ -6,7 +6,6 @@ programa lida com o maximo 1000 dias == 86 400 000 segundos
 */
 /*componentes do programa:
 input
-use char*
 */
 int main()
 {
