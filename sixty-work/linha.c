@@ -1,54 +1,77 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int vetorBranco(char arr[], int arraySize){
+int clearArray(char arr[], int arraySize){
   for (char i = 0; i < arraySize; i++){
     arr[i] = 0;
   }
+  printf("%s \n", arr);
+  printf("Vetor foi limpado");
+
+  return(0);
+
 }
 
-int lerVetor(char text, char storeArr[], int arraySize){
-  printf("Escreva as letras para o seu vetor");
+int readArray(char arr[], int arraySize){
+  printf("Write your input: \n");
   for (char i = 0; i < arraySize; i++){
-    text = getchar();
-    storeArr[text];
+    char c = getchar();
+    putchar(arr[i] = c);
   }
-  prinf("%f", storeArr[]);
+  printf(" \n Input adicionado: %s \n", arr);
+  return(0);
 }
 
-}
-
-int imprimirVetor(char arr[], int arraySize){
+int printArray(char arr[], int arraySize){
   for (char i = 0; i < arraySize; i++){
     putchar(arr[i]);
-
     }
+  printf(" \n Vetor foi lido");
+  return 0;
 }
 
 
-int subsVetor(char arr[], int arraySize){
+int subsArray(char arr[], int arraySize){
+  char toSubs, newVar;
+  printf("Qual o caracter a substituir? \n");
+  scanf("%c", &toSubs);
+  char getWhiteSpace = getchar();
+  printf("\nPor que caracter?");
+  scanf("%c", &newVar);
+
   for (char i = 0; i < arraySize; i++){
-    if(arr[i] == 'a'){
-      arr[i] = 'b';
+    if(arr[i] == toSubs){
+      arr[i] = newVar;
     }
   }
+  printf("\nO caracter ' %c ' foi substituido por ' %c ' ", toSubs, newVar);
+  printf("\nNovo array: %s", arr);
+  return 0;
 }
 
-int contaVetor(char arr[], int arraySize){
-  int arrayLen;
+
+int count_a(char arr[], int arraySize){
+  int amountVarFound = 0;
+  char toCheck;
+  printf("Valores do vetor ja existente: %s", arr);
+  printf("Que caracter quer contar: ");
+  scanf("%c", &toCheck);
+  char getStupifWhiteVal = getchar();
+
   for (char i = 0; i < arraySize; i++){
-    if(arr[i] == 'a'){
-      arrayLen += 1;
+    if(arr[i] == toCheck){
+      amountVarFound += 1;
     }
   }
-  return printf("%d", arrayLen + 1);
+  printf("Existem %d ocorrencias do caracter %c", amountVarFound, toCheck);
+  return 0;
 }
+
 
 int menu(){
-  char vector[19] = {'a', 'g', 'a'};
-
+  char vector[5] = {'a', 'g', 'a'};
+  char getwhiteSpace;
   char textInput;
-  char printedInputText[19];
   char userChoice;
   int userChoiceSucess = 0;
 
@@ -64,46 +87,36 @@ int menu(){
 
   while(!userChoiceSucess){
     scanf("%c", &userChoice);
+    getwhiteSpace = getchar();
+
 
   switch (userChoice) {
     case '1':
-      userChoiceSucess = 1;
-      vetorBranco(vector, 19);
-
-      printf("%s \n", vector);
-      printf("Vetor foi limpado");
-
+      clearArray(vector, 5);
       break;
+
     case '2':
-      userChoiceSucess = 1;
-      lerVetor(textInput, );
+      readArray(vector, 5);
       break;
+
     case '3':
-     imprimirVetor(vector, 19);
-     printf("Vetor foi lido");
+       printArray(vector, 5);
+       break;
 
-      userChoiceSucess = 1;
-      break;
     case '4':
-      userChoiceSucess = 1;
-      printf("%s \n", vector);
-      subsVetor(vector, 19);
-      printf("%s \n", vector);
-      printf("Caracter a foi substituido por b");
-
+      subsArray(vector, 5);
       break;
+
     case '5':
-      userChoiceSucess = 1;
-      printf("%s \n", vector);
+      count_a(vector, 5);
+      break;
 
-      contaVetor(vector, 19);
-      break;
     case 's':
-      printf("adeus\n");
+      printf(" \n adeus\n");
       exit(1);
+
     default:
-      printf("Plase choose one of the options above \n\n");
-      break;
+      printf("Write your next Input:");
     }
   }
 
