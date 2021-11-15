@@ -10,6 +10,9 @@
 #define MAX_WORD 10
 #define MAX_TEXT_LENGTH 8000
 
+#define TEXT "bom"
+#define TEXT_TO_SUBS "mau"
+
 int quantas_palavras () {
     int num;
     do {
@@ -23,6 +26,8 @@ int quantas_palavras () {
 
 void ler_substituicoes (int num, char chave[][MAX_WORD_LENGTH], char
 colocar[][MAX_WORD_LENGTH]) {
+printf("%s", chave);
+
 }
 
 bool le_texto(char * text, int maximo) {
@@ -32,15 +37,17 @@ void substitui_texto(int num, char retirar[][MAX_WORD_LENGTH], char
 colocar[][MAX_WORD_LENGTH], char * text, char * text_changed) {
 }
 
-main() {
+void main() {
     int  n_word= 0;           // Número de palavras no array word
-    char desaparecer[MAX_WORD][MAX_WORD_LENGTH]; // a substituir
-    char colocar[MAX_WORD][MAX_WORD_LENGTH];  // Substituições
-    char text[MAX_TEXT_LENGTH];   // Texto inicial
+    char text[MAX_TEXT_LENGTH] = "esta um bom dia";   // Texto inicial
+
+    char desaparecer[MAX_WORD][MAX_WORD_LENGTH] = TEXT; // a substituir
+    char colocar[MAX_WORD][MAX_WORD_LENGTH] = TEXT_TO_SUBS;  // Substituições
+
     char text_changed[MAX_TEXT_LENGTH]; // Texto modificado
 
     printf("Quantas palavras tem a lista de substituicao?\n");
-    n_word = quantas_palavras ();
+    n_word = quantas_palavras();
 
     printf("Introduza os textos a retirar e a colocar\n");
     ler_substituicoes(n_word, desaparecer, colocar);
@@ -53,6 +60,6 @@ main() {
     }
     substitui_texto(n_word, desaparecer, colocar,
         text, text_changed);
-    printf("O texto inicial eh:\n%s\n", text);
-    printf("O texto substituido eh:\n%s\n", text_changed);
+    printf("O texto inicial e:\n %s \n", text);
+    printf("O texto substituido e:\n %s \n", text_changed);
 }

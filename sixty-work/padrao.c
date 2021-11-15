@@ -1,72 +1,92 @@
 #include <stdio.h>
 #include <stdlib.h>
+/*
+write diagonal - problem with it
+*/
 
+int writeCollumn(int matrix[][4], int row, int collumns , int chosenCollumn){//escrever coluna e escrever linha
+  char writeCollumnUserInput;
+  printf("What character do you want: ");
+  scanf("%c", &writeCollumnUserInput);
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < collumns; j++)
+        {
+          matrix[i][chosenCollumn] = writeCollumnUserInput;
 
-int writeCollumn(char arr[], int arraySize){//escrever coluna e escrever linha
-  printf("Write your input: \n");
-  for (char i = 0; i < arraySize; i++){
-    char c = getchar();
-    putchar(arr[i] = c);
-  }
-  printf(" \n Input adicionado: %s \n", arr);
-  return(0);
+            printf("%c\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+
+}
+
+int writeLine(int matrix[][4], int row, int collumns , int chosenLine){//escrever coluna e escrever linha
+  char writeCollumnUserInput;
+  printf("What character do you want: ");
+  scanf("%c", &writeCollumnUserInput);
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < collumns; j++)
+        {
+          matrix[chosenLine][j] = writeCollumnUserInput;
+
+            printf("%c\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+
 }
 
 
-int writeLine(char arr[], int arraySize){//escrever coluna e escrever linha
-  printf("Write your input: \n");
-  for (char i = 0; i < arraySize; i++){
-    char c = getchar();
-    putchar(arr[i] = c);
-  }
-  printf(" \n Input adicionado: %s \n", arr);
-  return(0);
-}
+int writeDiagonal(int matrix[][4], int row, int collumns , char subsChar, int chosenDiagonal){//escrever coluna e escrever linha
+int i;
+int j;
+    for (i; i < row; i++)
+    {
+        for (j; j < collumns; j++)
+        {
+          if (j == i){
+            matrix[i][j] = subsChar;
+          }
 
+            printf("%c\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
 
-int writeDiagonal(char arr[], int arraySize){//escrever coluna e escrever linha
-  printf("Write your input: \n");
-  for (char i = 0; i < arraySize; i++){
-    char c = getchar();
-    putchar(arr[i] = c);
-  }
-  printf(" \n Input adicionado: %s \n", arr);
-  return(0);
 }
 
 /*
 =================================================================================================================
 */
 
+int clearMatrix(int matrix[][4], int row, int collumns , char subsChar){ // escreve matrix
 
+  for (int i = 0; i < row; i++)
+  {
+      for (int j = 0; j < collumns; j++)
+      {
+        matrix[i][j] = subsChar;
 
-int clearMatrix(char arr[], int arraySize){//usar esta como limpa matrix
-  char toSubs, newVar;
-  printf("Qual o caracter a substituir? \n");
-  scanf("%c", &toSubs);
-  char getWhiteSpace = getchar();
-  printf("\nPor que caracter?");
-  scanf("%c", &newVar);
-
-  for (char i = 0; i < arraySize; i++){
-    if(arr[i] == toSubs){
-      arr[i] = newVar;
-    }
+          printf("%c\t", matrix[i][j]);
+      }
+      printf("\n");
   }
-  printf("\nO caracter ' %c ' foi substituido por ' %c ' ", toSubs, newVar);
-  printf("\nNovo array: %s", arr);
   return 0;
 }
 
+int printMatrix(int matrix[][4], int row, int collumns){ // escreve matrix
 
-
-
-int printMatrix(int matrix, int row, int collumns){ // escreve matrix
-  for (row=0; row<row+1 ; row++)
+  for (int i = 0; i < row; i++)
   {
-      for(collumns=0; collumns<collumns + 1; collumns++)
+      for (int j = 0; j < collumns; j++)
       {
-           printf("%d     ", matrix[row][collumns]);
+          printf("%d\t", matrix[i][j]);
       }
       printf("\n");
   }
@@ -102,23 +122,23 @@ int menu(){
 
 
   switch (userChoice) {
-    /*
     case '1':
-      writeCollumn(firstArray, 5);
+      writeCollumn(firstArray, 4, 4, 2);
       break;
 
     case '2':
-      writeLine(firstArray, 5);
+      writeLine(firstArray, 4, 4, 2);
       break;
+
 
     case '3':
-       writeDiagonal(firstArray, 5);
+       writeDiagonal(firstArray, 4, 4, 'a', 2);
        break;
 
-    case '4':
-      clearMatrix(firstArray, 5);
+   case '4':
+      clearMatrix(firstArray, 4, 4, 'a');
       break;
-*/
+
     case '5':
       printMatrix(firstArray, 4, 4);
       break;
