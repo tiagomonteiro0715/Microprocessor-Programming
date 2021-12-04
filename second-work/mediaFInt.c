@@ -1,35 +1,33 @@
-
 /*
- * Exercício 2 - média de inteiros short
+ * Exercï¿½cio 2 - mï¿½dia de inteiros short
  * Ficheiro: mediaSInt.c
  */
 #include <stdio.h>
 
 void main() {
-    const int NUMERO= 3; /* CONSTANTE com número de elementos */
-    /* Variáveis para guardar Dados */
-    int val1=0, val2=0, val3=0;
-    int total; /* Variável para guardar valor total */
-    float media; /* Variável para guardar média */
-    float resto; /* Variável para guardar média */
+  const int NUMERO = 3; /* CONSTANTE com nï¿½mero de elementos */
+  /* Variï¿½veis para guardar Dados */
+  int val1 = 0, val2 = 0, val3 = 0;
+  int total; /* Variï¿½vel para guardar valor total */
+  float media; /* Variï¿½vel para guardar mï¿½dia */
+  float resto; /* Variï¿½vel para guardar mï¿½dia */
 
-    /* Lê valores */
-    printf("introduza os três valores:");
-    scanf(" %d %d %d", &val1, &val2, &val3);
+  /* Lï¿½ valores */
+  printf("introduza os trï¿½s valores:");
+  scanf(" %d %d %d", & val1, & val2, & val3);
 
-    total = val1 + val2 + val3;
-    media= total / NUMERO;  /* Calcula a divisão inteira */
-    resto = total%NUMERO;  /* Calcula a divisão inteira */
+  total = val1 + val2 + val3;
+  media = total / NUMERO; /* Calcula a divisï¿½o inteira */
+  resto = total % NUMERO; /* Calcula a divisï¿½o inteira */
 
-    printf("\n"); /* Acrescenta uma linha em branco */
+  printf("\n"); /* Acrescenta uma linha em branco */
 
-    /* Escreve o resultado */
-    printf(" %d \n", total);
-    printf(" %lf \n", media);
-//#https://stackoverflow.com/questions/499939/how-to-extract-the-decimal-part-from-a-floating-point-number-in-c#define
-    //posso usar isto?
-    printf(" %0.5lf \n", resto);
+  /* Escreve o resultado */
+  printf(" %d \n", total)
+  printf(" %lf \n", media)
+  //#https://stackoverflow.com/questions/499939/how-to-extract-the-decimal-part-from-a-floating-point-number-in-c#define
+  //posso usar isto?
+  printf(" %0.5lf \n", resto);
 
-    //printf(" %d + %d + %d e %d %d \n ", val1, val2, val3, media, resto);
+  //printf(" %d + %d + %d e %d %d \n ", val1, val2, val3, media, resto);
 }
-

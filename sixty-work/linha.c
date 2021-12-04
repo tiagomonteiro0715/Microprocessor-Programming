@@ -1,46 +1,46 @@
 #include <stdio.h>
+
 #include <stdlib.h>
 
-int clearArray(char arr[], int arraySize){
-  for (char i = 0; i < arraySize; i++){
+int clearArray(char arr[], int arraySize) {
+  for (char i = 0; i < arraySize; i++) {
     arr[i] = 0;
   }
   printf("%s \n", arr);
   printf("Vetor foi limpado");
 
-  return(0);
+  return (0);
 
 }
 
-int readArray(char arr[], int arraySize){
+int readArray(char arr[], int arraySize) {
   printf("Write your input: \n");
-  for (char i = 0; i < arraySize; i++){
+  for (char i = 0; i < arraySize; i++) {
     char c = getchar();
     putchar(arr[i] = c);
   }
   printf(" \n Input adicionado: %s \n", arr);
-  return(0);
+  return (0);
 }
 
-int printArray(char arr[], int arraySize){
-  for (char i = 0; i < arraySize; i++){
+int printArray(char arr[], int arraySize) {
+  for (char i = 0; i < arraySize; i++) {
     putchar(arr[i]);
-    }
+  }
   printf(" \n Vetor foi lido");
   return 0;
 }
 
-
-int subsArray(char arr[], int arraySize){
+int subsArray(char arr[], int arraySize) {
   char toSubs, newVar;
   printf("Qual o caracter a substituir? \n");
-  scanf("%c", &toSubs);
+  scanf("%c", & toSubs);
   char getWhiteSpace = getchar();
   printf("\nPor que caracter?");
-  scanf("%c", &newVar);
+  scanf("%c", & newVar);
 
-  for (char i = 0; i < arraySize; i++){
-    if(arr[i] == toSubs){
+  for (char i = 0; i < arraySize; i++) {
+    if (arr[i] == toSubs) {
       arr[i] = newVar;
     }
   }
@@ -49,17 +49,16 @@ int subsArray(char arr[], int arraySize){
   return 0;
 }
 
-
-int count_a(char arr[], int arraySize){
+int count_a(char arr[], int arraySize) {
   int amountVarFound = 0;
   char toCheck;
   printf("Valores do vetor ja existente: %s", arr);
   printf("Que caracter quer contar: ");
-  scanf("%c", &toCheck);
+  scanf("%c", & toCheck);
   char getStupifWhiteVal = getchar();
 
-  for (char i = 0; i < arraySize; i++){
-    if(arr[i] == toCheck){
+  for (char i = 0; i < arraySize; i++) {
+    if (arr[i] == toCheck) {
       amountVarFound += 1;
     }
   }
@@ -67,14 +66,16 @@ int count_a(char arr[], int arraySize){
   return 0;
 }
 
-
-int menu(){
-  char vector[5] = {'a', 'g', 'a'};
+int menu() {
+  char vector[5] = {
+    'a',
+    'g',
+    'a'
+  };
   char getwhiteSpace;
   char textInput;
   char userChoice;
   int userChoiceSucess = 0;
-
 
   printf("/*******************PROGRAMA LINHA********************/ \n");
   printf("1- limpar vetor \n");
@@ -85,12 +86,11 @@ int menu(){
   printf("s- Sair \n");
   printf("O que pretende fazer? "); //criar loop até dar valor aceitavel e tambem explorar outras defenições do switch
 
-  while(!userChoiceSucess){
-    scanf("%c", &userChoice);
+  while (!userChoiceSucess) {
+    scanf("%c", & userChoice);
     getwhiteSpace = getchar();
 
-
-  switch (userChoice) {
+    switch (userChoice) {
     case '1':
       clearArray(vector, 5);
       break;
@@ -100,8 +100,8 @@ int menu(){
       break;
 
     case '3':
-       printArray(vector, 5);
-       break;
+      printArray(vector, 5);
+      break;
 
     case '4':
       subsArray(vector, 5);
@@ -122,13 +122,9 @@ int menu(){
 
 }
 
-
-
-
-
 int main() {
   menu();
 
-   return 0;
+  return 0;
 }
 //ver vid freecodecamp em c sobre arrays:
