@@ -1,25 +1,25 @@
 /*
- * Exercício 2 - média de inteiros short
+ * Exercï¿½cio 2 - mï¿½dia de inteiros short
  * Ficheiro: mediaSInt.c
  */
 #include <stdio.h>
 
 main() {
-    const int NUMERO= 3; /* CONSTANTE com número de elementos */
-    /* Variáveis para guardar Dados */
-    short int val1=0, val2=0, val3=0;
-    short int total; /* Variável para guardar valor total */
-    short int media; /* Variável para guardar média */
+  const int NUMERO = 3; /* CONSTANTE com nï¿½mero de elementos */
+  /* Variï¿½veis para guardar Dados */
+  short int val1 = 0, val2 = 0, val3 = 0;
+  short int total; /* Variï¿½vel para guardar valor total */
+  short int media; /* Variï¿½vel para guardar mï¿½dia */
 
-    /* Lê valores */
-    printf("introduza os três valores:");
-    scanf(" %hd %hd %hd", &val1, &val2, &val3);
+  /* Lï¿½ valores */
+  printf("introduza os trï¿½s valores:");
+  scanf(" %hd %hd %hd", & val1, & val2, & val3);
 
-    total= val1+val2+val3; /* Calcula a soma */
-    media= total/NUMERO;  /* Calcula a divisão inteira */
+  total = val1 + val2 + val3; /* Calcula a soma */
+  media = total / NUMERO; /* Calcula a divisï¿½o inteira */
 
-    printf("\n"); /* Acrescenta uma linha em branco */
-    /* Escreve o resultado */
-    printf("A soma dos valores é %hd e a média é %hd\n",
+  printf("\n"); /* Acrescenta uma linha em branco */
+  /* Escreve o resultado */
+  printf("A soma dos valores ï¿½ %hd e a mï¿½dia ï¿½ %hd\n",
     total, media);
 }
