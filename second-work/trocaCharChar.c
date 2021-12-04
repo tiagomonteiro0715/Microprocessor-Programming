@@ -1,25 +1,25 @@
 #include <stdio.h>  /* Usa biblioteca stdio */
 
-int main() { /* Início da função principal */
-    /* Variáveis usadas para guardar 3 caracteres */
-    char caracter1, caracter2, caracter3;
+int main() {
+  /* Inï¿½cio da funï¿½ï¿½o principal */
+  /* Variï¿½veis usadas para guardar 3 caracteres */
+  char caracter1, caracter2, caracter3;
 
-    printf("Introduza três caracteres: ");
+  printf("Introduza trï¿½s caracteres: ");
 
-    /*
-    Lê caracteres
-    scanf(" %c ", &caracter1);
-    scanf(" %c ", &caracter2);
-    scanf(" %c", &caracter3);
-    */
+  /*
+  Lï¿½ caracteres
+  scanf(" %c ", &caracter1);
+  scanf(" %c ", &caracter2);
+  scanf(" %c", &caracter3);
+  */
 
+  caracter1 = getchar();
+  caracter2 = getchar();
+  caracter3 = getchar();
 
-    caracter1 = getchar();
-    caracter2 = getchar();
-    caracter3 = getchar();
-
-    /* Escreve caracteres pela ordem inversa */
-    printf("\nInvertendo a ordem dos caracteres obtemos: ");
+  /* Escreve caracteres pela ordem inversa */
+  printf("\nInvertendo a ordem dos caracteres obtemos: ");
   printf("'%c' '%c' '%c'\n", caracter3, caracter2, caracter1);
 }
 
